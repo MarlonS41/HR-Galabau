@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import CareerCard from '../components/CareerCard.astro';
 
 const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
   ? import.meta.env.BASE_URL.slice(0, -1) 
@@ -26,10 +27,8 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   <section class="section">
     <div class="container">
       <div class="about-grid" style="margin-bottom: 4rem;">
-        <div class="about-images-wrap">
-          <div class="about-img-main" style="height: 480px;">
-            <img src={`${baseUrl}/assets/images/HR-Galabau_karriere.jpg`} alt="Wir suchen dich bei HR-Galabau" />
-          </div>
+        <div>
+          <CareerCard />
         </div>
         <div>
           <span class="section-badge">Warum Hörnschemeyer + Riepe?</span>

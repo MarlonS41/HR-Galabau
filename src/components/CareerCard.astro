@@ -1,0 +1,339 @@
+---
+// CareerCard Component - Generiertes modernes "Wir suchen Verstärkung" Visual
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+---
+
+<div class="career-visual-card">
+  <!-- Decorative background elements -->
+  <div class="career-card-bg-glow"></div>
+  <img src={`${baseUrl}/assets/images/tree.svg`} alt="" class="career-card-tree-deco" aria-hidden="true" />
+  
+  <!-- Header Bar of the Card -->
+  <div class="career-card-top">
+    <div class="career-live-badge">
+      <span class="live-pulse-dot"></span>
+      <span>WIR SUCHEN VERSTÄRKUNG</span>
+    </div>
+    <div class="career-loc-badge">
+      📍 Osnabrück & Region
+    </div>
+  </div>
+
+  <!-- Main Headline in Card -->
+  <div class="career-card-hero">
+    <div class="career-card-brand">
+      <img src={`${baseUrl}/assets/images/logo_white.svg`} alt="Hörnschemeyer + Riepe" class="career-card-logo" />
+    </div>
+    <h3 class="career-card-title">
+      Dein neuer Job im <span class="text-gradient">Garten- & Landschaftsbau</span>
+    </h3>
+    <p class="career-card-subtitle">
+      Komm ins Team von Hörnschemeyer + Riepe – moderne Maschinen, echte Wertschätzung und ein starker Zusammenhalt!
+    </p>
+  </div>
+
+  <!-- Open Positions Pill Grid -->
+  <div class="career-positions-grid">
+    <div class="career-pos-item">
+      <div class="career-pos-icon">🌱</div>
+      <div class="career-pos-info">
+        <span class="career-pos-name">Landschaftsgärtner (m/w/d)</span>
+        <span class="career-pos-tag">Vollzeit · Unbefristet</span>
+      </div>
+    </div>
+
+    <div class="career-pos-item">
+      <div class="career-pos-icon">🚜</div>
+      <div class="career-pos-info">
+        <span class="career-pos-name">Vorarbeiter / Meister (m/w/d)</span>
+        <span class="career-pos-tag">Teamleitung · Top Gehalt</span>
+      </div>
+    </div>
+
+    <div class="career-pos-item">
+      <div class="career-pos-icon">🔨</div>
+      <div class="career-pos-info">
+        <span class="career-pos-name">Helfer & Quereinsteiger (m/w/d)</span>
+        <span class="career-pos-tag">Faire Einarbeitung</span>
+      </div>
+    </div>
+
+    <div class="career-pos-item">
+      <div class="career-pos-icon">🎓</div>
+      <div class="career-pos-info">
+        <span class="career-pos-name">Auszubildende Galabau (m/w/d)</span>
+        <span class="career-pos-tag">Start 2026/2027</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Perks Highlights -->
+  <div class="career-highlights-bar">
+    <div class="career-hl-item">
+      <span class="hl-check">✓</span>
+      <span>Übertarifliche Bezahlung</span>
+    </div>
+    <div class="career-hl-item">
+      <span class="hl-check">✓</span>
+      <span>Neuer Maschinenpark</span>
+    </div>
+    <div class="career-hl-item">
+      <span class="hl-check">✓</span>
+      <span>Keine Montage (nur regional)</span>
+    </div>
+    <div class="career-hl-item">
+      <span class="hl-check">✓</span>
+      <span>Familiäres Betriebsklima</span>
+    </div>
+  </div>
+
+  <!-- Bottom CTA Row inside Card -->
+  <div class="career-card-footer">
+    <div class="career-card-easy-apply">
+      ⚡ <strong>Einfach bewerben:</strong> Ohne Anschreiben & ohne Lebenslauf!
+    </div>
+    <div class="career-card-buttons">
+      <a href={`${baseUrl}/karriere#bewerbung`} class="btn btn-primary btn-sm">
+        Jetzt in 60s bewerben →
+      </a>
+      <a href="tel:+4917646550964" class="btn btn-outline-white btn-sm">
+        📞 0176 / 4655 0964
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .career-visual-card {
+    position: relative;
+    background: linear-gradient(145deg, #132419 0%, #1c3624 50%, #15291c 100%);
+    border-radius: var(--radius-xl);
+    padding: 2.25rem;
+    color: #ffffff;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(121, 186, 18, 0.35);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  }
+
+  .career-visual-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5), 0 0 30px rgba(121, 186, 18, 0.4);
+  }
+
+  .career-card-bg-glow {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(121, 186, 18, 0.3) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .career-card-tree-deco {
+    position: absolute;
+    right: -30px;
+    bottom: -30px;
+    height: 180px;
+    opacity: 0.08;
+    pointer-events: none;
+  }
+
+  .career-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .career-live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(121, 186, 18, 0.18);
+    border: 1px solid rgba(150, 206, 15, 0.5);
+    padding: 0.35rem 0.95rem;
+    border-radius: var(--radius-full);
+    color: var(--accent-lime);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+  }
+
+  .live-pulse-dot {
+    width: 9px;
+    height: 9px;
+    background-color: var(--accent-lime);
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(150, 206, 15, 0.7);
+    animation: livePulse 1.8s infinite;
+  }
+
+  @keyframes livePulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(150, 206, 15, 0.7); }
+    70% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(150, 206, 15, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(150, 206, 15, 0); }
+  }
+
+  .career-loc-badge {
+    font-size: 0.82rem;
+    color: var(--text-inverse-muted);
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--radius-full);
+  }
+
+  .career-card-hero {
+    position: relative;
+    z-index: 2;
+  }
+
+  .career-card-brand {
+    margin-bottom: 0.75rem;
+  }
+
+  .career-card-logo {
+    height: 38px;
+    width: auto;
+  }
+
+  .career-card-title {
+    color: #ffffff;
+    font-size: 1.45rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 0.4rem;
+  }
+
+  .career-card-subtitle {
+    color: var(--text-inverse-muted);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .career-positions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .career-pos-item {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-md);
+    padding: 0.75rem 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    transition: all var(--transition-fast);
+  }
+
+  .career-pos-item:hover {
+    background: rgba(121, 186, 18, 0.18);
+    border-color: var(--accent-lime);
+    transform: translateY(-2px);
+  }
+
+  .career-pos-icon {
+    font-size: 1.35rem;
+    flex-shrink: 0;
+  }
+
+  .career-pos-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+
+  .career-pos-name {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .career-pos-tag {
+    font-size: 0.72rem;
+    color: var(--accent-lime);
+    font-weight: 600;
+    margin-top: 0.2rem;
+  }
+
+  .career-highlights-bar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    padding: 0.85rem 1rem;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    z-index: 2;
+  }
+
+  .career-hl-item {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #e2ede4;
+  }
+
+  .hl-check {
+    color: var(--accent-lime);
+    font-weight: 800;
+    font-size: 0.9rem;
+  }
+
+  .career-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    position: relative;
+    z-index: 2;
+  }
+
+  .career-card-easy-apply {
+    font-size: 0.82rem;
+    color: var(--text-inverse-muted);
+  }
+
+  .career-card-easy-apply strong {
+    color: #ffffff;
+  }
+
+  .career-card-buttons {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 600px) {
+    .career-positions-grid {
+      grid-template-columns: 1fr;
+    }
+    .career-highlights-bar {
+      grid-template-columns: 1fr;
+    }
+    .career-card-footer {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

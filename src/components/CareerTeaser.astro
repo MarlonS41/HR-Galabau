@@ -1,5 +1,6 @@
 ---
-// CareerTeaser Component
+import CareerCard from './CareerCard.astro';
+
 const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
   ? import.meta.env.BASE_URL.slice(0, -1) 
   : import.meta.env.BASE_URL;
@@ -43,8 +44,9 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         </div>
       </div>
 
-      <div class="career-img-box">
-        <img src={`${baseUrl}/assets/images/HR-Galabau_karriere.jpg`} alt="Karriere bei Hörnschemeyer und Riepe Gartenbau" />
+      <!-- Dynamic Generated Modern Career Visual -->
+      <div>
+        <CareerCard />
       </div>
     </div>
   </div>
