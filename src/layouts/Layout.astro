@@ -76,7 +76,6 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       initGalleryFilterAndLightbox();
       initFaqAccordion();
       initProjectConfigurator();
-      initContactForms();
       initCookieConsent();
       initStatsCounter();
     });
@@ -261,53 +260,6 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
       });
     }
 
-    function initContactForms() {
-      const contactForm = document.getElementById('mainContactForm') as HTMLFormElement;
-      const careerForm = document.getElementById('quickCareerForm') as HTMLFormElement;
-
-      const setupFormSubmission = (form: HTMLFormElement | null, successMsg: string) => {
-        if (!form) return;
-
-        form.addEventListener('submit', (e) => {
-          e.preventDefault();
-          const submitBtn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
-          const originalText = submitBtn ? submitBtn.innerHTML : 'Absenden';
-
-          if (submitBtn) {
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = 'Wird gesendet...';
-          }
-
-          setTimeout(() => {
-            if (submitBtn) {
-              submitBtn.disabled = false;
-              submitBtn.innerHTML = originalText;
-            }
-
-            const alertBox = form.querySelector<HTMLElement>('.form-alert');
-            if (alertBox) {
-              alertBox.className = 'form-alert success';
-              alertBox.innerHTML = `<strong>Vielen Dank!</strong> ${successMsg}`;
-              alertBox.style.display = 'block';
-            } else {
-              alert(`Vielen Dank! ${successMsg}`);
-            }
-
-            form.reset();
-          }, 800);
-        });
-      };
-
-      setupFormSubmission(
-        contactForm,
-        'Ihre Anfrage ist erfolgreich bei Hörnschemeyer + Riepe eingegangen. Wir melden uns schnellstmöglich bei Ihnen.'
-      );
-
-      setupFormSubmission(
-        careerForm,
-        'Ihre Kurzbewerbung ist erfolgreich bei uns eingegangen. Wir freuen uns auf das Gespräch mit Ihnen!'
-      );
-    }
 
     function initCookieConsent() {
       const banner = document.getElementById('cookieBanner');

@@ -67,64 +67,30 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         </div>
       </div>
 
-      <!-- Contact Form -->
-      <div class="contact-form-wrap">
-        <h3 style="margin-bottom: 0.5rem;">Unverbindliche Anfrage senden</h3>
-        <p style="margin-bottom: 1.75rem; font-size: 0.95rem;">Füllen Sie kurz die Felder aus – wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+      <!-- Contact Direct Action Card -->
+      <div class="contact-form-wrap" style="display: flex; flex-direction: column; justify-content: center;">
+        <h3 style="margin-bottom: 0.5rem;">Direkt Kontakt aufnehmen</h3>
+        <p style="margin-bottom: 2rem; font-size: 0.95rem;">
+          Wir beraten Sie gerne persönlich zu Ihrem Vorhaben. Nutzen Sie einen unserer direkten Kontaktwege:
+        </p>
 
-        <div class="form-alert"></div>
+        <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+          <a href="tel:054072585" class="btn btn-primary btn-lg" style="justify-content: center; gap: 0.75rem;">
+            <span>📞 Büro anrufen: 05407 / 2585</span>
+          </a>
 
-        <form id="mainContactForm">
-          <div class="form-grid">
-            <div class="form-group">
-              <label class="form-label" for="contactName">Ihr Vor- & Nachname *</label>
-              <input class="form-input" type="text" id="contactName" name="name" placeholder="z. B. Max Mustermann" required />
-            </div>
+          <a href="tel:+4917646550964" class="btn btn-secondary btn-lg" style="justify-content: center; gap: 0.75rem;">
+            <span>📱 Mobil: +49 176 4655 0964</span>
+          </a>
 
-            <div class="form-group">
-              <label class="form-label" for="contactPhone">Telefonnummer *</label>
-              <input class="form-input" type="tel" id="contactPhone" name="phone" placeholder="z. B. 0176 12345678" required />
-            </div>
+          <a href="https://wa.me/4917646550964?text=Hallo%20H%C3%B6rnschemeyer%20%2B%20Riepe%20Team,%20ich%20habe%20eine%20Anfrage%20zu%20einem%20Gartenprojekt." class="btn btn-outline btn-lg" target="_blank" rel="noopener" style="justify-content: center; gap: 0.75rem;">
+            <span>💬 Per WhatsApp schreiben</span>
+          </a>
 
-            <div class="form-group">
-              <label class="form-label" for="contactEmail">E-Mail-Adresse</label>
-              <input class="form-input" type="email" id="contactEmail" name="email" placeholder="name@beispiel.de" />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="contactService">Gewünschte Leistung</label>
-              <select class="form-select" id="contactService" name="service">
-                <option value="allgemein" selected={selectedService === 'allgemein'}>Allgemeine Beratung / Komplettgarten</option>
-                <option value="neuanlage" selected={selectedService === 'neuanlage'}>Gartenneuanlage & Umgestaltung</option>
-                <option value="pflaster" selected={selectedService === 'pflaster'}>Pflasterarbeiten, Terrasse & Wegebau</option>
-                <option value="zaun" selected={selectedService === 'zaun'}>Zaunbau & Sichtschutz</option>
-                <option value="erdarbeiten" selected={selectedService === 'erdarbeiten'}>Erdarbeiten & Geländemodellierung</option>
-                <option value="baumpflege" selected={selectedService === 'baumpflege'}>Baumpflege & Rodung</option>
-                <option value="pflege" selected={selectedService === 'pflege'}>Garten- & Grünanlagenpflege</option>
-              </select>
-            </div>
-
-            <div class="form-group col-span-2">
-              <label class="form-label" for="contactLocation">Standort des Projekts (Ort / PLZ)</label>
-              <input class="form-input" type="text" id="contactLocation" name="location" placeholder="z. B. 49090 Osnabrück oder Umkreis" />
-            </div>
-
-            <div class="form-group col-span-2">
-              <label class="form-label" for="contactMessage">Ihre Nachricht / Projektbeschreibung</label>
-              <textarea class="form-textarea" id="contactMessage" name="message" placeholder="Beschreiben Sie kurz Ihr Vorhaben, Maße oder gewünschte Ausführungszeiten..."></textarea>
-            </div>
-
-            <div class="form-group col-span-2">
-              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
-                Anfrage jetzt kostenlos absenden
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-              </button>
-              <p class="form-privacy-note">
-                🔒 Ihre Daten werden streng vertraulich behandelt und ausschließlich zur Bearbeitung Ihrer Anfrage verwendet. Weitere Infos in der <a href={`${baseUrl}/datenschutz`} style="color: var(--primary); text-decoration: underline;">Datenschutzerklärung</a>.
-              </p>
-            </div>
-          </div>
-        </form>
+          <a href="mailto:info@hr-galabau.com" class="btn btn-outline btn-lg" style="justify-content: center; gap: 0.75rem;">
+            <span>✉️ E-Mail senden: info@hr-galabau.com</span>
+          </a>
+        </div>
       </div>
     </div>
 

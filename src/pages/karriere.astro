@@ -136,69 +136,26 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
     </div>
   </section>
 
-  <!-- Express Application Form Section -->
+  <!-- Direct Application Contact Section -->
   <section class="section section-subtle" id="bewerbung">
     <div class="container" style="max-width: 800px;">
-      <div class="contact-form-wrap">
-        <span class="section-badge">60-Sekunden Express-Bewerbung</span>
-        <h2 style="margin-top: 0.5rem; margin-bottom: 0.5rem;">Kein Anschreiben, kein Lebenslauf nötig!</h2>
+      <div class="contact-form-wrap" style="text-align: center;">
+        <span class="section-badge">Direkt kontaktieren</span>
+        <h2 style="margin-top: 0.5rem; margin-bottom: 0.5rem;">Interesse am Job? Ruf uns an oder schreib uns!</h2>
         <p style="margin-bottom: 2rem;">
-          Gib uns einfach kurz deinen Namen und deine Telefonnummer durch. Jonas Hörnschemeyer meldet sich zeitnah bei dir für ein lockeres Kennenlernen.
+          Kein Formular, kein Anschreiben, kein Lebenslauf nötig. Melde dich einfach direkt bei Jonas Hörnschemeyer für ein kurzes, unkompliziertes Kennenlernen.
         </p>
 
-        <div class="form-alert"></div>
-
-        <form id="quickCareerForm">
-          <div class="form-grid">
-            <div class="form-group">
-              <label class="form-label" for="applicantName">Vor- & Nachname *</label>
-              <input class="form-input" type="text" id="applicantName" name="name" placeholder="z. B. Max Mustermann" required />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="applicantPhone">Telefonnummer *</label>
-              <input class="form-input" type="tel" id="applicantPhone" name="phone" placeholder="z. B. 0176 12345678" required />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="applicantEmail">E-Mail-Adresse</label>
-              <input class="form-input" type="email" id="applicantEmail" name="email" placeholder="name@beispiel.de" />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="applicantRole">Gewünschte Position</label>
-              <select class="form-select" id="applicantRole" name="role">
-                <option value="gaertner">Landschaftsgärtner / Gärtner (m/w/d)</option>
-                <option value="vorarbeiter">Vorarbeiter / Teamleiter (m/w/d)</option>
-                <option value="helfer">Helfer Gartenbau / Quereinsteiger (m/w/d)</option>
-                <option value="azubi">Ausbildung zum Landschaftsgärtner (m/w/d)</option>
-                <option value="initiativ">Initiativbewerbung</option>
-              </select>
-            </div>
-
-            <div class="form-group col-span-2">
-              <label class="form-label" for="applicantExperience">Führerscheinklassen & kurze Info über dich (optional)</label>
-              <textarea class="form-textarea" id="applicantExperience" name="info" placeholder="z. B. Führerschein Klasse B/BE vorhanden, 3 Jahre Erfahrung im Pflastern..."></textarea>
-            </div>
-
-            <div class="form-group col-span-2">
-              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
-                Bewerbung jetzt absenden
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-              </button>
-              <p class="form-privacy-note">
-                🔒 Deine Daten werden vertraulich behandelt und nicht an Dritte weitergegeben.
-              </p>
-            </div>
-          </div>
-        </form>
-
-        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color); text-align: center;">
-          <p style="font-weight: 600; color: var(--text-main); margin-bottom: 0.5rem;">Du möchtest lieber direkt anrufen oder per WhatsApp schreiben?</p>
-          <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-            <a href="tel:+4917646550964" class="btn btn-secondary btn-sm">📱 0176 / 4655 0964 anrufen</a>
-            <a href="https://wa.me/4917646550964?text=Hallo%20Jonas,%20ich%20habe%20Interesse%20an%20einem%20Job%20bei%20euch!" class="btn btn-outline btn-sm" target="_blank" rel="noopener">💬 WhatsApp schreiben</a>
-          </div>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <a href="tel:+4917646550964" class="btn btn-primary btn-lg">
+            📱 0176 / 4655 0964 anrufen
+          </a>
+          <a href="https://wa.me/4917646550964?text=Hallo%20Jonas,%20ich%20habe%20Interesse%20an%20einem%20Job%20bei%20euch!" class="btn btn-secondary btn-lg" target="_blank" rel="noopener">
+            💬 WhatsApp schreiben
+          </a>
+          <a href="mailto:info@hr-galabau.com" class="btn btn-outline btn-lg">
+            ✉️ E-Mail senden
+          </a>
         </div>
       </div>
     </div>
