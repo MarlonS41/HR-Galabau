@@ -1,0 +1,40 @@
+---
+// ProjectCheck Component
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+---
+<section class="section section-subtle" id="schnellanfrage">
+  <div class="container">
+    <div class="configurator-wrap">
+      <div class="section-header text-left" style="margin-bottom: 2rem;">
+        <span class="section-badge">Projekt-Schnellcheck</span>
+        <h2 style="color: #fff; margin-bottom: 0.5rem;">Welches Gartenprojekt planen Sie?</h2>
+        <p style="color: #c4d7cb;">Wählen Sie Ihre gewünschte Leistung für eine direkte Vorauswahl im Anfrageformular:</p>
+      </div>
+
+      <div class="configurator-steps">
+        <div class="config-btn" data-value="neuanlage" data-name="Gartenneuanlage & Umgestaltung">
+          <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🌱</div>
+          <strong>Gartenneuanlage</strong>
+          <p style="color: #adc5b5; font-size: 0.85rem; margin-top: 0.25rem;">Rasen, Bepflanzung, Gesamtkonzepte</p>
+        </div>
+        <div class="config-btn" data-value="pflaster" data-name="Pflaster- & Wegebau (Terrasse, Einfahrt)">
+          <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🧱</div>
+          <strong>Pflaster & Terrasse</strong>
+          <p style="color: #adc5b5; font-size: 0.85rem; margin-top: 0.25rem;">Einfahrten, Wege & Terrassenplatten</p>
+        </div>
+        <div class="config-btn" data-value="zaun" data-name="Zaunbau & Sichtschutz">
+          <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🛡️</div>
+          <strong>Zaun & Sichtschutz</strong>
+          <p style="color: #adc5b5; font-size: 0.85rem; margin-top: 0.25rem;">Doppelstabmatte, Holz & Gabionen</p>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.15);">
+        <span style="font-size: 0.95rem; color: #fff;">💡 Unverbindlich & kostenlos innerhalb von 24h Rückmeldung erhalten.</span>
+        <a href={`${baseUrl}/kontakt`} class="btn btn-primary">Jetzt Anfrage starten →</a>
+      </div>
+    </div>
+  </div>
+</section>

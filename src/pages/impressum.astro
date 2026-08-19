@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+---
+
+<Layout 
+  title="Impressum | HÖRNSCHEMEYER u. RIEPE Garten - Landschaftsbau GmbH" 
+  description="Impressum und rechtliche Angaben gemäß § 5 TMG für die HÖRNSCHEMEYER u. RIEPE Garten - Landschaftsbau GmbH in Osnabrück."
+  activeNav="impressum"
+>
+  <section class="section">
+    <div class="container" style="max-width: 900px;">
+      <div class="legal-content">
+        <span class="section-badge">Rechtliche Angaben</span>
+        <h1 style="margin-top: 0.5rem; margin-bottom: 2rem;">Impressum</h1>
+
+        <h2>Angaben gemäß § 5 TMG</h2>
+        <p>
+          <strong>HÖRNSCHEMEYER U. RIEPE Garten - Landschaftsbau GmbH</strong><br />
+          Moorweg 61<br />
+          49090 Osnabrück
+        </p>
+
+        <h2>Vertreten durch</h2>
+        <p>
+          <strong>Geschäftsführer:</strong> Jonas Hörnschemeyer
+        </p>
+
+        <h2>Kontakt</h2>
+        <p>
+          <strong>Telefon:</strong> 05407 / 2585<br />
+          <strong>Mobil:</strong> +49 176 4655 0964<br />
+          <strong>E-Mail:</strong> <a href="mailto:info@hr-galabau.com" style="color: var(--primary); text-decoration: underline;">info@hr-galabau.com</a><br />
+          <strong>Internet:</strong> <a href="https://hr-galabau.com" style="color: var(--primary); text-decoration: underline;">https://hr-galabau.com</a>
+        </p>
+
+        <h2>Registereintrag</h2>
+        <p>
+          Eintragung im Handelsregister.<br />
+          <strong>Registergericht:</strong> Amtsgericht Osnabrück<br />
+          <strong>Handelsregisternummer:</strong> HRB 217065
+        </p>
+
+        <h2>Umsatzsteuer-Identifikationsnummer</h2>
+        <p>
+          <strong>Finanzamt Osnabrück:</strong> Steuernummer 66 / 200 / 52677<br />
+          <strong>USt-ID-Nr. gemäß § 27 a Umsatzsteuergesetz:</strong> DE349141425
+        </p>
+
+        <h2>Haftung für Inhalte</h2>
+        <p>
+          Die HÖRNSCHEMEYER U. RIEPE Garten - Landschaftsbau GmbH weist darauf hin, dass alle Angaben ohne Gewähr sind. Eine Haftung oder Garantie für die Aktualität, Richtigkeit und Vollständigkeit der zur Verfügung gestellten Informationen und Daten ist ausgeschlossen. Dies gilt ebenso für andere Webseiten, auf die mittels eines Hyperlinks verwiesen wird. Für die Inhalte solcher Webseiten ist die HÖRNSCHEMEYER U. RIEPE Garten - Landschaftsbau GmbH ebenfalls nicht verantwortlich. Die Informationen auf den Webseiten stellen in keinem Fall rechtliche Zusicherungen dar.
+        </p>
+
+        <h2>Urheberrecht & Copyright</h2>
+        <p>
+          Alle Inhalte und die Gestaltung dieser Seiten sind urheberrechtlich geschützt. Alle Rechte an Texten, Abbildungen, Animationen, Audio-Dateien und sämtlichen weiteren veröffentlichten Informationen behält sich die HÖRNSCHEMEYER U. RIEPE Garten - Landschaftsbau GmbH vor. Reproduktion, Verarbeitung, Vervielfältigung, Verbreitung sowie Speicherung in Datenverarbeitungsanlagen des Ganzen oder in Teilen, gleich welcher Art, bedarf einer vorherigen schriftlichen Zustimmung der HÖRNSCHEMEYER U. RIEPE Garten - Landschaftsbau GmbH.
+        </p>
+
+        <h2>EU-Streitschlichtung & Verbraucherstreitbeilegung</h2>
+        <p>
+          Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: underline;">https://ec.europa.eu/consumers/odr/</a>.<br />
+          Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+        </p>
+
+        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+          <a href={`${baseUrl}/`} class="btn btn-outline">← Zurück zur Startseite</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,140 @@
+---
+interface Props {
+  selectedService?: string;
+}
+
+const { selectedService = 'allgemein' } = Astro.props;
+
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+---
+<section class="section" id="kontakt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Kontakt & Beratung</span>
+      <h2 class="section-title">Lassen Sie uns über Ihr Gartenprojekt sprechen</h2>
+      <p class="section-subtitle">
+        Rufen Sie uns direkt an oder senden Sie uns eine Nachricht – wir freuen uns auf Sie!
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Contact Info Box -->
+      <div class="contact-info-card">
+        <div>
+          <h3 style="color: #fff; margin-bottom: 0.5rem;">HÖRNSCHEMEYER u. RIEPE</h3>
+          <p style="color: var(--accent-lime); font-weight: 700; font-size: 0.9rem;">Garten - Landschaftsbau GmbH</p>
+
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <div class="contact-info-icon">📍</div>
+              <div class="contact-info-text">
+                <h4>Anschrift & Standort</h4>
+                <p>Moorweg 61<br />49090 Osnabrück</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">📞</div>
+              <div class="contact-info-text">
+                <h4>Telefon Büro</h4>
+                <p><a href="tel:054072585">05407 / 2585</a></p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">📱</div>
+              <div class="contact-info-text">
+                <h4>Mobil & WhatsApp</h4>
+                <p><a href="tel:+4917646550964">+49 176 4655 0964</a></p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">✉️</div>
+              <div class="contact-info-text">
+                <h4>E-Mail</h4>
+                <p><a href="mailto:info@hr-galabau.com">info@hr-galabau.com</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.08); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.12);">
+          <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.25rem;">🕒 Büro- & Beratungszeiten</div>
+          <div style="font-size: 0.85rem; color: var(--text-inverse-muted);">Mo. – Fr.: 07:00 – 17:00 Uhr<br />Samstag: Nach Vereinbarung</div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-wrap">
+        <h3 style="margin-bottom: 0.5rem;">Unverbindliche Anfrage senden</h3>
+        <p style="margin-bottom: 1.75rem; font-size: 0.95rem;">Füllen Sie kurz die Felder aus – wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+
+        <div class="form-alert"></div>
+
+        <form id="mainContactForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="contactName">Ihr Vor- & Nachname *</label>
+              <input class="form-input" type="text" id="contactName" name="name" placeholder="z. B. Max Mustermann" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactPhone">Telefonnummer *</label>
+              <input class="form-input" type="tel" id="contactPhone" name="phone" placeholder="z. B. 0176 12345678" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactEmail">E-Mail-Adresse</label>
+              <input class="form-input" type="email" id="contactEmail" name="email" placeholder="name@beispiel.de" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactService">Gewünschte Leistung</label>
+              <select class="form-select" id="contactService" name="service">
+                <option value="allgemein" selected={selectedService === 'allgemein'}>Allgemeine Beratung / Komplettgarten</option>
+                <option value="neuanlage" selected={selectedService === 'neuanlage'}>Gartenneuanlage & Umgestaltung</option>
+                <option value="pflaster" selected={selectedService === 'pflaster'}>Pflasterarbeiten, Terrasse & Wegebau</option>
+                <option value="zaun" selected={selectedService === 'zaun'}>Zaunbau & Sichtschutz</option>
+                <option value="erdarbeiten" selected={selectedService === 'erdarbeiten'}>Erdarbeiten & Geländemodellierung</option>
+                <option value="baumpflege" selected={selectedService === 'baumpflege'}>Baumpflege & Rodung</option>
+                <option value="pflege" selected={selectedService === 'pflege'}>Garten- & Grünanlagenpflege</option>
+              </select>
+            </div>
+
+            <div class="form-group col-span-2">
+              <label class="form-label" for="contactLocation">Standort des Projekts (Ort / PLZ)</label>
+              <input class="form-input" type="text" id="contactLocation" name="location" placeholder="z. B. 49090 Osnabrück oder Umkreis" />
+            </div>
+
+            <div class="form-group col-span-2">
+              <label class="form-label" for="contactMessage">Ihre Nachricht / Projektbeschreibung</label>
+              <textarea class="form-textarea" id="contactMessage" name="message" placeholder="Beschreiben Sie kurz Ihr Vorhaben, Maße oder gewünschte Ausführungszeiten..."></textarea>
+            </div>
+
+            <div class="form-group col-span-2">
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                Anfrage jetzt kostenlos absenden
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+              <p class="form-privacy-note">
+                🔒 Ihre Daten werden streng vertraulich behandelt und ausschließlich zur Bearbeitung Ihrer Anfrage verwendet. Weitere Infos in der <a href={`${baseUrl}/datenschutz`} style="color: var(--primary); text-decoration: underline;">Datenschutzerklärung</a>.
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Map Embed -->
+    <div class="map-container">
+      <iframe 
+        title="Standort von Hörnschemeyer + Riepe Garten-Landschaftsbau GmbH"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=7.9944,52.3112,8.0444,52.3312&amp;layer=mapnik&amp;marker=52.3212,8.0194"
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>

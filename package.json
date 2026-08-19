@@ -1,0 +1,16 @@
+{
+  "name": "hr-galabau",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Moderne Website für HÖRNSCHEMEYER u. RIEPE Garten - Landschaftsbau GmbH mit Astro.js",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^4.16.18"
+  }
+}

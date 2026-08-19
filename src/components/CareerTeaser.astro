@@ -1,0 +1,51 @@
+---
+// CareerTeaser Component
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+---
+<section class="section" id="karriere" style="padding-top: 2rem;">
+  <div class="container">
+    <div class="career-banner">
+      <div>
+        <span class="section-badge" style="background: rgba(121,186,18,0.2); color: var(--accent-lime);">Wir suchen dich!</span>
+        <h2 style="color: #fff; margin-bottom: 1rem;">Werde Teil unseres Teams bei Hörnschemeyer + Riepe!</h2>
+        <p style="color: var(--text-inverse-muted); margin-bottom: 1.5rem;">
+          Du liebst die Natur, packst gerne an und möchtest sichtbare Ergebnisse deiner Arbeit sehen? Wir bieten dir abwechslungsreiche Projekte, top Maschinen und ein echtes Teamgefühl.
+        </p>
+
+        <div class="career-perks-grid">
+          <div class="career-perk">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Faire & pünktliche Bezahlung</span>
+          </div>
+          <div class="career-perk">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Moderner Fuhr- & Maschinenpark</span>
+          </div>
+          <div class="career-perk">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Familiäres, kollegiales Klima</span>
+          </div>
+          <div class="career-perk">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Geregelte Arbeitszeiten & Kleidung</span>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href={`${baseUrl}/karriere`} class="btn btn-primary">
+            Offene Stellen ansehen
+          </a>
+          <a href="tel:+4917646550964" class="btn btn-outline-white">
+            Direkt anrufen: 0176 / 4655 0964
+          </a>
+        </div>
+      </div>
+
+      <div class="career-img-box">
+        <img src={`${baseUrl}/assets/images/HR-Galabau_karriere.jpg`} alt="Karriere bei Hörnschemeyer und Riepe Gartenbau" />
+      </div>
+    </div>
+  </div>
+</section>

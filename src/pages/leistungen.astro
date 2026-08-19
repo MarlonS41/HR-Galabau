@@ -1,0 +1,221 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+---
+
+<Layout 
+  title="Leistungen & Services | Hörnschemeyer + Riepe Galabau Osnabrück" 
+  description="Unsere Leistungen im Garten- & Landschaftsbau: Neuanlage, Pflasterarbeiten, Terrassenbau, Zaunbau, Erdarbeiten, Baumpflege & Gartenpflege in Osnabrück."
+  activeNav="leistungen"
+>
+  <!-- Page Banner -->
+  <section class="hero" style="padding: 3.5rem 0 4rem;">
+    <div class="container text-center" style="max-width: 800px; margin: 0 auto; text-align: center;">
+      <span class="hero-badge">Leistungsspektrum</span>
+      <h1 class="hero-title" style="margin-top: 1rem;">Unsere Leistungen im Detail</h1>
+      <p class="hero-lead" style="margin-bottom: 0;">
+        Von der individuellen Planung bis zur handwerklichen Perfektion – entdecken Sie unsere maßgeschneiderten Lösungen für Ihren Garten und Außenbereich.
+      </p>
+    </div>
+  </section>
+
+  <!-- Detailed Services Section -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Service 1: Neuanlage -->
+      <div class="about-grid" id="neuanlage" style="margin-bottom: 5rem;">
+        <div class="about-images-wrap">
+          <div class="about-img-main">
+            <img src={`${baseUrl}/assets/images/Neubau1.jpeg`} alt="Gartenneuanlage & Umgestaltung" />
+          </div>
+        </div>
+        <div>
+          <span class="section-badge">Gartenbau & Pflanzung</span>
+          <h2>Gartenneuanlage & Umgestaltung</h2>
+          <p>
+            Ein neu gebautes Haus oder ein in die Jahre gekommener Garten? Wir gestalten Ihr Grundstück nach Ihren individuellen Vorstellungen und harmonisch abgestimmt auf die Architektur.
+          </p>
+          <div class="about-check-list">
+            <div class="about-check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Verlegung von Premium-Rollrasen & Neuanlage von Rasenflächen</span>
+            </div>
+            <div class="about-check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Harmonische Stauden-, Strauch- und Baumpflanzungen</span>
+            </div>
+            <div class="about-check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Moderne Beeteinfassungen aus Naturstein oder Metall</span>
+            </div>
+            <div class="about-check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Gartenbeleuchtung, Wasserstellen & Zierelemente</span>
+            </div>
+          </div>
+          <a href={`${baseUrl}/kontakt?service=neuanlage`} class="btn btn-primary">Dieses Projekt anfragen →</a>
+        </div>
+      </div>
+
+      <!-- Service 2: Pflasterarbeiten -->
+      <div class="about-grid" id="pflaster" style="margin-bottom: 5rem;">
+        <div>
+          <span class="section-badge">Wegebau & Terrassen</span>
+          <h2>Pflasterarbeiten & Wegebau</h2>
+          <p>
+            Ob repräsentative Hofeinfahrt, gemütliche Sonnenterrasse oder geschwungener Gartenweg: Unsere Pflastermeister verlegen Beton- und Natursteine mit höchster Präzision und langlebiger Tragschicht.
+          </p>
+          <div class="about-check-list">
+            <div class="about-check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Terrassen mit Feinsteinzeug-, Beton- oder Natursteinplatten</span>
+            </div>
+            <div class="about-check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Pkw-Einfahrten, Stellplätze & Hofbefestigungen</span>
+            </div>
+            <div class="about-check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Treppenanlagen, Blockstufen & Podeste</span>
+            </div>
+            <div class="about-check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Barrierefreie Gehwege & Randsteinfassungen</span>
+            </div>
+          </div>
+          <a href={`${baseUrl}/kontakt?service=pflaster`} class="btn btn-primary">Dieses Projekt anfragen →</a>
+        </div>
+        <div class="about-images-wrap">
+          <div class="about-img-main">
+            <img src={`${baseUrl}/assets/images/3.jpg`} alt="Pflasterarbeiten und Terrassenbau" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 3: Zaunbau -->
+      <div class="about-grid" id="zaun" style="margin-bottom: 5rem;">
+        <div class="about-images-wrap">
+          <div class="about-img-main">
+            <img src={`${baseUrl}/assets/images/Zaun0.jpeg`} alt="Zaunbau und Sichtschutz" />
+          </div>
+        </div>
+        <div>
+          <span class="section-badge">Einfriedung & Privatsphäre</span>
+          <h2>Zaunbau & Sichtschutz</h2>
+          <p>
+            Schützen Sie Ihre Privatsphäre und sichern Sie Ihr Grundstück stilvoll ab. Wir montieren langlebige Zaunanlagen für Privat- und Gewerbegrundstücke in allen gängigen Höhen und Ausführungen.
+          </p>
+          <div class="about-check-list">
+            <div class="about-check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Doppelstabmattenzäune (feuerverzinkt / pulverbeschichtet)</span>
+            </div>
+            <div class="about-check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Eingeflochtene Sichtschutzstreifen & Design-Elemente</span>
+            </div>
+            <div class="about-check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Gabionenwände mit Natursteinbefüllung</span>
+            </div>
+            <div class="about-check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Einflügelige & zweiflügelige Toranlagen samt Schließtechnik</span>
+            </div>
+          </div>
+          <a href={`${baseUrl}/kontakt?service=zaun`} class="btn btn-primary">Dieses Projekt anfragen →</a>
+        </div>
+      </div>
+
+      <!-- Service 4: Erdarbeiten -->
+      <div class="about-grid" id="erdarbeiten" style="margin-bottom: 5rem;">
+        <div>
+          <span class="section-badge">Bagger & Maschinenpark</span>
+          <h2>Erdarbeiten & Geländemodellierung</h2>
+          <p>
+            Mit leistungsstarken Minibaggern, Radladern und Dumpern formen wir Ihr Gelände, gleichen Höhenunterschiede aus und bereiten den optimalen Baugrund für alle Folgegewerke vor.
+          </p>
+          <div class="about-check-list">
+            <div class="about-check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Baugrubenaushub für Pools, Fundamente & Leitungen</span>
+            </div>
+            <div class="about-check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Planierung, Erdabtrag und Bodenaustausch mit Mutterboden</span>
+            </div>
+            <div class="about-check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Hangabfangungen mit L-Steinen, Gabionen oder Palisaden</span>
+            </div>
+            <div class="about-check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Entwässerungssysteme, Rigolen & Versickerungsanlagen</span>
+            </div>
+          </div>
+          <a href={`${baseUrl}/kontakt?service=erdarbeiten`} class="btn btn-primary">Dieses Projekt anfragen →</a>
+        </div>
+        <div class="about-images-wrap">
+          <div class="about-img-main">
+            <img src={`${baseUrl}/assets/images/Neubau3.jpeg`} alt="Erdarbeiten und Baggerarbeiten" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 5 & 6: Baumpflege & Gartenpflege -->
+      <div class="about-grid" id="baumpflege">
+        <div class="about-images-wrap">
+          <div class="about-img-main">
+            <img src={`${baseUrl}/assets/images/6.jpg`} alt="Baumpflege und Baumschnitt" />
+          </div>
+        </div>
+        <div>
+          <span class="section-badge">Pflege & Werterhalt</span>
+          <h2>Baumpflege, Rodung & Gartenpflege</h2>
+          <p>
+            Vom gezielten Pflegeschnitt bis zur anspruchsvollen Fällung: Wir kümmern uns um gesunde Baumbestände und die ganzjährige Instandhaltung Ihrer Grünanlagen.
+          </p>
+          <div class="about-check-list">
+            <div class="about-check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Fachgerechter Kronen- & Formschnitt</span>
+            </div>
+            <div class="about-check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Sichere Baumfällungen & Wurzelstockfräsen</span>
+            </div>
+            <div class="about-check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Saisonaler Hecken- & Gehölzschnitt</span>
+            </div>
+            <div class="about-check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Komplette Schnittgut-Entsorgung inklusive</span>
+            </div>
+          </div>
+          <a href={`${baseUrl}/kontakt?service=baumpflege`} class="btn btn-primary">Dieses Projekt anfragen →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Box -->
+  <section class="section section-dark text-center">
+    <div class="container" style="max-width: 800px;">
+      <span class="section-badge">Bereit für Ihr Projekt?</span>
+      <h2 style="margin: 1rem 0;">Lassen Sie sich unverbindlich vor Ort beraten</h2>
+      <p style="margin-bottom: 2rem;">
+        Vereinbaren Sie noch heute einen Termin mit Jonas Hörnschemeyer und lassen Sie uns gemeinsam Ihren Traumgarten planen.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap;">
+        <a href={`${baseUrl}/kontakt`} class="btn btn-primary btn-lg">Jetzt Beratungstermin anfragen</a>
+        <a href="tel:054072585" class="btn btn-outline-white btn-lg">📞 05407 / 2585 anrufen</a>
+      </div>
+    </div>
+  </section>
+</Layout>

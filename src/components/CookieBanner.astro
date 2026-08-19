@@ -1,0 +1,16 @@
+---
+// CookieBanner Component
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+---
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-banner-title">🌿 Datenschutz & Cookies</div>
+  <p class="cookie-banner-text">
+    Wir verwenden ausschließlich technisch notwendige Technologien, um Ihnen eine einwandfreie Nutzung unserer Website zu ermöglichen. Weitere Details finden Sie in unserer <a href={`${baseUrl}/datenschutz`} style="color: var(--accent-lime); text-decoration: underline;">Datenschutzerklärung</a>.
+  </p>
+  <div class="cookie-banner-actions">
+    <button class="btn btn-primary btn-sm" id="acceptCookies">Einverstanden</button>
+    <button class="btn btn-outline-white btn-sm" id="declineCookies">Nur Notwendige</button>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactSection from '../components/ContactSection.astro';
+---
+
+<Layout 
+  title="Kontakt & Anfahrt | Hörnschemeyer + Riepe Galabau Osnabrück" 
+  description="Kontaktieren Sie die HÖRNSCHEMEYER u. RIEPE Garten - Landschaftsbau GmbH in Osnabrück. Telefon: 05407 / 2585, Mobil: +49 176 4655 0964, E-Mail: info@hr-galabau.com."
+  activeNav="kontakt"
+>
+  <!-- Page Banner -->
+  <section class="hero" style="padding: 3.5rem 0 4.5rem;">
+    <div class="container text-center" style="max-width: 800px; margin: 0 auto; text-align: center;">
+      <span class="hero-badge">Kontakt & Anfahrt</span>
+      <h1 class="hero-title" style="margin-top: 1rem;">Wir sind für Sie da</h1>
+      <p class="hero-lead" style="margin-bottom: 0;">
+        Sie planen ein Gartenprojekt oder haben Fragen zu unseren Leistungen? Rufen Sie uns an, schreiben Sie uns oder fordern Sie direkt einen unverbindlichen Beratungstermin vor Ort an.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact & Map Component -->
+  <ContactSection />
+</Layout>

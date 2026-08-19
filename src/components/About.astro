@@ -1,0 +1,49 @@
+---
+// About Component
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+---
+<section class="section" id="ueber-uns">
+  <div class="container about-grid">
+    <div class="about-images-wrap">
+      <div class="about-img-main">
+        <img src={`${baseUrl}/assets/images/7.jpg`} alt="Gartenlandschaftsbau Team Hörnschemeyer und Riepe" />
+      </div>
+      <div class="about-badge-card">
+        <div class="about-badge-title">ALLES IM GRÜNEN BEREICH</div>
+        <div class="about-badge-desc">Ihr regionaler Partner für Qualität, Zuverlässigkeit und langlebiges Gartenhandwerk.</div>
+      </div>
+    </div>
+
+    <div>
+      <span class="section-badge">Über Hörnschemeyer + Riepe</span>
+      <h2 style="margin-bottom: 1.25rem;">Ihr regionaler Fachbetrieb für Garten- und Landschaftsbau</h2>
+      <p style="margin-bottom: 1rem;">
+        Die <strong>HÖRNSCHEMEYER u. RIEPE Garten - Landschaftsbau GmbH</strong> mit Sitz im Moorweg 61 in 49090 Osnabrück steht für erstklassige Handwerksqualität, moderne Gestaltungskonzepte und persönliche Betreuung.
+      </p>
+      <p style="margin-bottom: 1.5rem;">
+        Unter der Leitung von Geschäftsführer <strong>Jonas Hörnschemeyer</strong> verwirklichen wir Gartenträume für Privatkunden, Hausverwaltungen und Gewerbetreibende. Ob kleine Umgestaltung oder Großprojekt – wir arbeiten mit Leidenschaft daran, Ihren Außenbereich zu verschönern.
+      </p>
+
+      <div class="about-check-list">
+        <div class="about-check-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>Erfahrenes, eingespieltes Fachkräfte-Team</span>
+        </div>
+        <div class="about-check-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>Eigener Fuhrpark & modernste Baumaschinen</span>
+        </div>
+        <div class="about-check-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>Transparente Festpreisangebote ohne Überraschungen</span>
+        </div>
+      </div>
+
+      <a href={`${baseUrl}/kontakt`} class="btn btn-secondary">
+        Jetzt Kennenlerngespräch anfragen
+      </a>
+    </div>
+  </div>
+</section>

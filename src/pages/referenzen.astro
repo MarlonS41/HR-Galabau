@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Gallery from '../components/Gallery.astro';
+---
+
+<Layout 
+  title="Referenzen & Projekte | Hörnschemeyer + Riepe Galabau Osnabrück" 
+  description="Entdecken Sie ausgewählte Gartenprojekte, Terrassen, Zaunanlagen und Neuanlagen von Hörnschemeyer + Riepe Garten- und Landschaftsbau GmbH in Osnabrück."
+  activeNav="referenzen"
+>
+  <!-- Page Banner -->
+  <section class="hero" style="padding: 3.5rem 0 4rem;">
+    <div class="container text-center" style="max-width: 800px; margin: 0 auto; text-align: center;">
+      <span class="hero-badge">Galerie & Einblicke</span>
+      <h1 class="hero-title" style="margin-top: 1rem;">Unsere Referenzprojekte</h1>
+      <p class="hero-lead" style="margin-bottom: 0;">
+        Hier finden Sie Bilder unserer Projekte aus Osnabrück und Umgebung. Klicken Sie auf ein beliebiges Bild, um es hochauflösend in der Großansicht zu betrachten.
+      </p>
+    </div>
+  </section>
+
+  <!-- Full Gallery Component -->
+  <Gallery isFullPage={true} />
+
+  <!-- CTA Box -->
+  <section class="section section-dark text-center">
+    <div class="container" style="max-width: 800px;">
+      <span class="section-badge">Interesse an einem Beratungstermin?</span>
+      <h2 style="margin: 1rem 0;">Planen Sie jetzt Ihr Gartenprojekt</h2>
+      <p style="margin-bottom: 2rem;">
+        Melden Sie sich gerne unverbindlich bei uns. Wir freuen uns darauf, Ihr Vorhaben kennenzulernen.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap;">
+        <a href="/kontakt" class="btn btn-primary btn-lg">Beratungstermin vereinbaren</a>
+        <a href="tel:054072585" class="btn btn-outline-white btn-lg">05407 / 2585 anrufen</a>
+      </div>
+    </div>
+  </section>
+</Layout>

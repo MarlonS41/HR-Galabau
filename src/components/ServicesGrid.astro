@@ -1,0 +1,157 @@
+---
+// ServicesGrid Component
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+---
+<section class="section" id="leistungen">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Unsere Leistungen</span>
+      <h2 class="section-title">Alles aus einer Hand für Ihr grünes Paradies</h2>
+      <p class="section-subtitle">
+        Ob private Garten-Oase oder anspruchsvolle Gewerbeanlage: Wir begleiten Sie mit fachlicher Expertise, kreativen Ideen und zuverlässiger Umsetzung.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <!-- Service 1 -->
+      <div class="service-card">
+        <div class="service-card-img">
+          <img src={`${baseUrl}/assets/images/Neubau1.jpeg`} alt="Gartenneuanlage & Umgestaltung" />
+          <span class="service-card-tag">Gartenbau</span>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-icon">🌱</div>
+          <h3 class="service-card-title">Gartenneuanlage & Umgestaltung</h3>
+          <p class="service-card-text">
+            Verwandeln Sie Ihr Grundstück in einen Rückzugsort. Wir übernehmen Bodenaufbereitung, Rollrasenverlegung, Beetanlagen und individuelle Pflanzkonzepte.
+          </p>
+          <ul class="service-card-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Rollrasen & Raseneinsaat</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Stauden- & Gehölzpflanzungen</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Neubau- & Bestandsgärten</li>
+          </ul>
+          <a href={`${baseUrl}/leistungen#neuanlage`} class="service-card-link">
+            Mehr erfahren <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="service-card">
+        <div class="service-card-img">
+          <img src={`${baseUrl}/assets/images/3.jpg`} alt="Pflaster- & Wegebau" />
+          <span class="service-card-tag">Pflasterarbeiten</span>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-icon">🧱</div>
+          <h3 class="service-card-title">Pflasterarbeiten & Wegebau</h3>
+          <p class="service-card-text">
+            Robuste, langlebige und stilvolle Pflasterungen für Terrassen, Hofeinfahrten, Gehwege und Treppenanlagen in Beton- oder Natursteinoptik.
+          </p>
+          <ul class="service-card-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Terrassen & Sitzecken</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Hofeinfahrten & PKW-Stellplätze</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Naturstein, Klinker & Großformat</li>
+          </ul>
+          <a href={`${baseUrl}/leistungen#pflaster`} class="service-card-link">
+            Mehr erfahren <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="service-card">
+        <div class="service-card-img">
+          <img src={`${baseUrl}/assets/images/Zaun.jpeg`} alt="Zaunbau & Sichtschutz" />
+          <span class="service-card-tag">Sicherheit & Privatsphäre</span>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-icon">🛡️</div>
+          <h3 class="service-card-title">Zaunbau & Sichtschutz</h3>
+          <p class="service-card-text">
+            Stilvolle Abgrenzung und Schutz vor neugierigen Blicken. Wir montieren hochwertige Doppelstabmatten, Gabionen, Holzzäune und Torsysteme.
+          </p>
+          <ul class="service-card-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Doppelstabmatten mit Sichtschutz</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Gabionenwände & Steinkörbe</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Maßgenaue Toranlagen</li>
+          </ul>
+          <a href={`${baseUrl}/leistungen#zaun`} class="service-card-link">
+            Mehr erfahren <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="service-card">
+        <div class="service-card-img">
+          <img src={`${baseUrl}/assets/images/Neubau3.jpeg`} alt="Erdarbeiten & Geländemodellierung" />
+          <span class="service-card-tag">Maschinenpark</span>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-icon">🚜</div>
+          <h3 class="service-card-title">Erdarbeiten & Modellierung</h3>
+          <p class="service-card-text">
+            Das solide Fundament jedes Gartens. Mit unserem modernen Bagger- und Maschinenfuhrpark führen wir Aushub, Planierung und Geländemodellierungen durch.
+          </p>
+          <ul class="service-card-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Baugruben- & Bodenaushub</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Hangabsicherung & L-Steine</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Bodenverbesserung & Entwässerung</li>
+          </ul>
+          <a href={`${baseUrl}/leistungen#erdarbeiten`} class="service-card-link">
+            Mehr erfahren <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="service-card">
+        <div class="service-card-img">
+          <img src={`${baseUrl}/assets/images/6.jpg`} alt="Baumpflege & Fällungen" />
+          <span class="service-card-tag">Baumpflege</span>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-icon">🪓</div>
+          <h3 class="service-card-title">Baumpflege & Fällarbeiten</h3>
+          <p class="service-card-text">
+            Fachgerechte Pflege und sichere Rodungen. Wir schneiden Baumkronen, stutzen Hecken zurück und beseitigen Problembäume samt Wurzelstockfräsung.
+          </p>
+          <ul class="service-card-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Kronenpflege & Totholzentfernung</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Sichere Fällungen & Rodungen</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Fachgerechter Grünschnitt-Abtransport</li>
+          </ul>
+          <a href={`${baseUrl}/leistungen#baumpflege`} class="service-card-link">
+            Mehr erfahren <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="service-card">
+        <div class="service-card-img">
+          <img src={`${baseUrl}/assets/images/2.jpg`} alt="Gartenpflege & Instandhaltung" />
+          <span class="service-card-tag">Dauerpflege</span>
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-icon">✂️</div>
+          <h3 class="service-card-title">Garten- & Grünpflege</h3>
+          <p class="service-card-text">
+            Dauerhafte Schönheit für Ihr Grün: Regelmäßige Heckenpflege, Beetpflege, Rasenbelüftung und Saison-Rundumbetreuung für private und gewerbliche Kunden.
+          </p>
+          <ul class="service-card-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Heckenschnitt & Formschnitt</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Frühjahrs- & Herbstfit-Pakete</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Ganzjährige Objektbetreuung</li>
+          </ul>
+          <a href={`${baseUrl}/leistungen#pflege`} class="service-card-link">
+            Mehr erfahren <span>→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

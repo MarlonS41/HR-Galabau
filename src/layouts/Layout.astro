@@ -1,0 +1,377 @@
+---
+import TopBar from '../components/TopBar.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FloatingActions from '../components/FloatingActions.astro';
+import Lightbox from '../components/Lightbox.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  activeNav?: string;
+}
+
+const {
+  title = 'Hörnschemeyer + Riepe | Garten- & Landschaftsbau Osnabrück',
+  description = 'HÖRNSCHEMEYER u. RIEPE Garten - Landschaftsbau GmbH in Osnabrück. Ihr Meisterbetrieb für Gartenneuanlage, Pflasterarbeiten, Zaunbau, Erdarbeiten & Baumpflege.',
+  activeNav = 'home'
+} = Astro.props;
+
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+---
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="keywords" content="GalaBau Osnabrück, Gartenbau Osnabrück, Landschaftsbau, Hörnschemeyer Riepe, Pflasterarbeiten, Zaunbau, Rollrasen, Terrassenbau, Gartenpflege" />
+  <meta name="author" content="HÖRNSCHEMEYER u. RIEPE Garten - Landschaftsbau GmbH" />
+  <meta name="theme-color" content="#172a1e" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content={`${baseUrl}/assets/images/1.jpg`} />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/png" href={`${baseUrl}/favicon.png`} />
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <TopBar />
+
+  <!-- Sticky Navbar -->
+  <Header activeNav={activeNav} />
+
+  <!-- Page Content -->
+  <main>
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <Footer />
+
+  <!-- Floating Quick Action Buttons -->
+  <FloatingActions />
+
+  <!-- Lightbox Modal -->
+  <Lightbox />
+
+  <!-- DSGVO Cookie Notice -->
+  <CookieBanner />
+
+  <!-- Client JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initStickyHeader();
+      initMobileNavigation();
+      initGalleryFilterAndLightbox();
+      initFaqAccordion();
+      initProjectConfigurator();
+      initContactForms();
+      initCookieConsent();
+      initStatsCounter();
+    });
+
+    function initStickyHeader() {
+      const header = document.querySelector('.site-header');
+      if (!header) return;
+      const handleScroll = () => {
+        if (window.scrollY > 40) header.classList.add('scrolled');
+        else header.classList.remove('scrolled');
+      };
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      handleScroll();
+    }
+
+    function initMobileNavigation() {
+      const toggleBtn = document.querySelector('.mobile-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      if (!toggleBtn || !navLinks) return;
+
+      toggleBtn.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        toggleBtn.setAttribute('aria-expanded', String(isOpen));
+        toggleBtn.innerHTML = isOpen
+          ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>'
+          : '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+      });
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('open');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+          toggleBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+        });
+      });
+    }
+
+    function initGalleryFilterAndLightbox() {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const galleryItems = document.querySelectorAll<HTMLElement>('.gallery-item');
+      const lightbox = document.getElementById('lightboxModal');
+
+      if (filterBtns.length > 0 && galleryItems.length > 0) {
+        filterBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filterVal = btn.getAttribute('data-filter');
+
+            galleryItems.forEach(item => {
+              const category = item.getAttribute('data-category');
+              if (filterVal === 'all' || category === filterVal) {
+                item.style.display = 'block';
+                setTimeout(() => {
+                  item.style.opacity = '1';
+                  item.style.transform = 'scale(1)';
+                }, 50);
+              } else {
+                item.style.opacity = '0';
+                item.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                  item.style.display = 'none';
+                }, 250);
+              }
+            });
+          });
+        });
+      }
+
+      if (!lightbox) return;
+
+      const lightboxImg = lightbox.querySelector<HTMLImageElement>('.lightbox-img');
+      const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+      const closeBtn = lightbox.querySelector('.lightbox-close');
+      const prevBtn = lightbox.querySelector('.lightbox-prev');
+      const nextBtn = lightbox.querySelector('.lightbox-next');
+
+      let currentIndex = 0;
+      let visibleItems: HTMLElement[] = [];
+
+      const updateVisibleItems = () => {
+        visibleItems = Array.from(galleryItems).filter(item => item.style.display !== 'none');
+      };
+
+      const showLightboxImage = (index: number) => {
+        updateVisibleItems();
+        if (visibleItems.length === 0) return;
+
+        if (index < 0) index = visibleItems.length - 1;
+        if (index >= visibleItems.length) index = 0;
+        currentIndex = index;
+
+        const item = visibleItems[currentIndex];
+        const img = item.querySelector('img');
+        const title = item.querySelector('.gallery-item-title')?.textContent || '';
+        const cat = item.querySelector('.gallery-category')?.textContent || '';
+
+        if (img && lightboxImg && lightboxCaption) {
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt || title;
+          lightboxCaption.textContent = title ? `${title} (${cat})` : cat;
+        }
+
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeLightbox = () => {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      };
+
+      galleryItems.forEach((item) => {
+        item.addEventListener('click', () => {
+          updateVisibleItems();
+          const index = visibleItems.indexOf(item);
+          showLightboxImage(index !== -1 ? index : 0);
+        });
+      });
+
+      if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+      if (prevBtn) prevBtn.addEventListener('click', () => showLightboxImage(currentIndex - 1));
+      if (nextBtn) nextBtn.addEventListener('click', () => showLightboxImage(currentIndex + 1));
+
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') showLightboxImage(currentIndex - 1);
+        if (e.key === 'ArrowRight') showLightboxImage(currentIndex + 1);
+      });
+    }
+
+    function initFaqAccordion() {
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        if (!question) return;
+
+        question.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item) otherItem.classList.remove('active');
+          });
+          item.classList.toggle('active', !isActive);
+        });
+      });
+    }
+
+    function initProjectConfigurator() {
+      const configButtons = document.querySelectorAll('.config-btn');
+      const serviceSelect = document.querySelector<HTMLSelectElement>('#contactService');
+      const messageArea = document.querySelector<HTMLTextAreaElement>('#contactMessage');
+
+      if (!configButtons.length) return;
+
+      configButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          configButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const selectedValue = btn.getAttribute('data-value');
+          const selectedName = btn.getAttribute('data-name');
+
+          if (serviceSelect && selectedValue) {
+            serviceSelect.value = selectedValue;
+          }
+
+          if (messageArea && selectedName) {
+            messageArea.value = `Hallo Herr Hörnschemeyer,\n\nich interessiere mich für ein unverbindliches Beratungsangebot zum Thema "${selectedName}".\n\nDetails zum Projekt:\n- Standort / Ort:\n- Ungefähre Fläche / Umfang:\n- Gewünschter Zeitraum:\n\nBitte kontaktieren Sie mich. Vielen Dank!`;
+          }
+
+          const contactSection = document.querySelector('#kontakt');
+          if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    }
+
+    function initContactForms() {
+      const contactForm = document.getElementById('mainContactForm') as HTMLFormElement;
+      const careerForm = document.getElementById('quickCareerForm') as HTMLFormElement;
+
+      const setupFormSubmission = (form: HTMLFormElement | null, successMsg: string) => {
+        if (!form) return;
+
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const submitBtn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+          const originalText = submitBtn ? submitBtn.innerHTML : 'Absenden';
+
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Wird gesendet...';
+          }
+
+          setTimeout(() => {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = originalText;
+            }
+
+            const alertBox = form.querySelector<HTMLElement>('.form-alert');
+            if (alertBox) {
+              alertBox.className = 'form-alert success';
+              alertBox.innerHTML = `<strong>Vielen Dank!</strong> ${successMsg}`;
+              alertBox.style.display = 'block';
+            } else {
+              alert(`Vielen Dank! ${successMsg}`);
+            }
+
+            form.reset();
+          }, 800);
+        });
+      };
+
+      setupFormSubmission(
+        contactForm,
+        'Ihre Anfrage ist erfolgreich bei Hörnschemeyer + Riepe eingegangen. Wir melden uns schnellstmöglich bei Ihnen.'
+      );
+
+      setupFormSubmission(
+        careerForm,
+        'Ihre Kurzbewerbung ist erfolgreich bei uns eingegangen. Wir freuen uns auf das Gespräch mit Ihnen!'
+      );
+    }
+
+    function initCookieConsent() {
+      const banner = document.getElementById('cookieBanner');
+      const acceptBtn = document.getElementById('acceptCookies');
+      const declineBtn = document.getElementById('declineCookies');
+
+      if (!banner) return;
+
+      const consent = localStorage.getItem('hr_galabau_cookies');
+      if (!consent) {
+        setTimeout(() => banner.classList.add('show'), 1000);
+      }
+
+      if (acceptBtn) {
+        acceptBtn.addEventListener('click', () => {
+          localStorage.setItem('hr_galabau_cookies', 'accepted');
+          banner.classList.remove('show');
+        });
+      }
+
+      if (declineBtn) {
+        declineBtn.addEventListener('click', () => {
+          localStorage.setItem('hr_galabau_cookies', 'essential_only');
+          banner.classList.remove('show');
+        });
+      }
+    }
+
+    function initStatsCounter() {
+      const statNumbers = document.querySelectorAll<HTMLElement>('.stat-number');
+      if (!statNumbers.length) return;
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target as HTMLElement;
+            const target = parseInt(el.getAttribute('data-target') || '0', 10);
+            const prefix = el.getAttribute('data-prefix') || '';
+            const suffix = el.getAttribute('data-suffix') || '';
+
+            if (!isNaN(target)) {
+              let count = 0;
+              const duration = 1500;
+              const stepTime = 25;
+              const totalSteps = duration / stepTime;
+              const stepInc = target / totalSteps;
+
+              const counterInterval = setInterval(() => {
+                count += stepInc;
+                if (count >= target) {
+                  el.textContent = `${prefix}${target}${suffix}`;
+                  clearInterval(counterInterval);
+                } else {
+                  el.textContent = `${prefix}${Math.floor(count)}${suffix}`;
+                }
+              }, stepTime);
+            }
+            obs.unobserve(el);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      statNumbers.forEach(num => observer.observe(num));
+    }
+  </script>
+</body>
+</html>
