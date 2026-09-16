@@ -59,14 +59,6 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
         <span class="career-pos-tag">Faire Einarbeitung</span>
       </div>
     </div>
-
-    <div class="career-pos-item">
-      <div class="career-pos-icon">🎓</div>
-      <div class="career-pos-info">
-        <span class="career-pos-name">Auszubildende Galabau (m/w/d)</span>
-        <span class="career-pos-tag">Start 2026/2027</span>
-      </div>
-    </div>
   </div>
 
   <!-- Key Perks Highlights -->
@@ -223,7 +215,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
 
   .career-positions-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 0.75rem;
     position: relative;
     z-index: 2;
